@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cbk321fh8-go-gitops
+  description: This is GitOps manifest for cbk321fh8-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cbk321fh8-go
+    janus-idp.io/tekton: cbk321fh8-go 
+    backstage.io/kubernetes-id: cbk321fh8-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cbk321fh8-go
